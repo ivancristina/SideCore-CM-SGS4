@@ -441,3 +441,5 @@ endif
 obj-$(CONFIG_BT_BCM4335) += board-bluetooth-bcm4335.o
 
 obj-$(CONFIG_CPU_FREQ_MSM) += cpufreq.o
+obj-$(CONFIG_MSM_CPUFREQ_LIMITER) += cpufreq_limit.o
+
