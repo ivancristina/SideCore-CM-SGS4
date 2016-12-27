@@ -1,17 +1,8 @@
 ui_print("");ui_print("");ui_print("");ui_print("");ui_print("");ui_print("");
 ui_print("--------------------------------------------");
-ui_print(" .                                          ");
-ui_print(" ..                                         ");
-ui_print(" ...                                        ");
-ui_print(" ....	                                  ");
-ui_print(" ....	SideCore Kernel           ");
-ui_print("			...CM based....     ");
-ui_print(" ..                                     ....");
-ui_print(" ..                                      ...");
-ui_print(" ..                                       .. ");
-ui_print(" ..                                         .");
-
-ui_print("------------------------------------------");
+ui_print(".........SideCore Kernel.........");
+ui_print("....................CM based.......");
+ui_print("--------------------------------------------");
 ui_print("");
 
 
