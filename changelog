@@ -16,3 +16,6 @@ Disabled CRC
 Default governor:Darkness
 Multi Core power saving option(Disabled by default)
 Enabled Async
+GPU OC
+Governors:
+
