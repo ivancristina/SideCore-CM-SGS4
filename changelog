@@ -12,3 +12,4 @@ Dynamic Fsync toggle (disabled by default)
 Power Efficient Workqueues for powersaving
 Reduced bcmdhd wakelock
 Enabled Fast Charge
+Add Overclock/UnderClock options
