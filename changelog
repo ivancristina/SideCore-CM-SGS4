@@ -3,7 +3,6 @@ Initial release
 Built with pure linaro 4.9
 3.4.110 kernel base
 Intelli-plug Hotplug, MPDecision disabled
-Added Sweep2Sleep. Sweep from above the Back button across to above the Menu button to put screen to sleep.
 Updated Interactive CPU Governor from @Temasek's Hlte kernel
 Updated CPU boost driver from @Temasek's Hlte kernel
 ROW I/O Scheduler set by default
@@ -14,3 +13,6 @@ Reduced bcmdhd wakelock
 Enabled Fast Charge
 Add Overclock/UnderClock options
 Disabled CRC
+Default governor:Darkness
+Multi Core power saving option(Disabled by default)
+Enabled Async
