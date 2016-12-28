@@ -4,8 +4,8 @@ Based on CM kernel
 Updated since Dec 8 of CM upstream
 Built with pure linaro 4.9
 3.4.110 kernel base
-Swipe to wake/Sleep feature
-(Swipe from left softkey to right softkey-horizontically)
+Swipe to Sleep feature
+(Swipe from right(back) softkey to left(menu) softkey-horizontically)
 
 Intelli-plug Hotplug, MPDecision disabled
 Updated Interactive CPU Governor from @Temasek's Hlte kernel
