@@ -42,7 +42,6 @@ ui_print(".....H");
 ui_print("");
 package_extract_dir("lokkernel", "/tmp");
 package_extract_file("boot.img", "/tmp/boot.img");
-ui_print("Setting permissions");
 ui_print("");
 ui_print(".....I");
 
