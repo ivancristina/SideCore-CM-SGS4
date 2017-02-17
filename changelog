@@ -4,8 +4,6 @@ Based on CM kernel
 Updated since Dec 8 of CM upstream
 Built with pure linaro 4.9
 3.4.110 kernel base
-Swipe to Sleep feature
-(Swipe from right(back) softkey to left(menu) softkey-horizontically)
 
 Intelli-plug Hotplug, MPDecision disabled
 Updated Interactive CPU Governor from @Temasek's Hlte kernel
@@ -21,7 +19,6 @@ Disabled CRC
 Default governor:Darkness
 Multi Core power saving option(Disabled by default)
 Enabled Async
-GPU OC(ALREADY ENABLED.KEEP IN MIND TO CHANGE IT IF YOU WANT)
 Decreased touch boost by half
 Push cpu on boot
 i/o schedulers:
