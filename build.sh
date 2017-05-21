@@ -19,8 +19,8 @@ build()
 deep_clean()
 {
 	echo "Distro cleaning"
-	make clean
-	make ARCH=arm distclean
+	make ARCH=arm mrproper;
+	make clean;
 	ccache -c 
 	ccache -C
 	
