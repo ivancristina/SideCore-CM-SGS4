@@ -10,26 +10,43 @@ build()
 	make side_jf_defconfig
 	make -j4
 	
-	PRODUCTIMAGE="arch/arm/boot/Image"
+	PRODUCTIMAGE="arch/arm/boot/zImage"
 	if [ ! -f "$PRODUCTIMAGE" ]; then
 		echo "build failed" 
 		exit 0;
 	fi
 	
+	
+	cp -r arch/arm/boot/zImage REPACKING/zImage
+	
+	cd REPACKING
+	./repack.sh
+	cd ..
+	cp -r REPACKING/boot.img OUT/boot.img
+	
+	#Repacking
+	cd OUT
+	FILENAME=SideCore-SGS4-NOUGAT-${VERSION_NUMBER}-`date +"[%H-%M][%d-%m]"`.zip
+	zip -r $FILENAME .;
+	cd ..
+	
 }
 
 deep_clean()
 {
+	rm -rf OUT/boot.img
+	rm -rf OUT/*.zip
+	rm -rf REPACKING/boot.img
+	rm -rf REPACKING/zImage
+	rm -rf REPACKING/ramdisk.gz
+	
+	
 	rm -rf android-toolchain/*
 	echo "Distro cleaning"
 	make ARCH=arm mrproper;
 	make clean;
 	ccache -c 
 	ccache -C
-	
-	
-	
-	
 }
 
 rerun()

@@ -3123,15 +3123,10 @@ static const struct soc_enum es325_algorithms_enum =
 static const char * const es325_off_on_texts[] = {
 	"Off", "On"
 };
-static const struct soc_enum es325_veq_enable_enum =
-	SOC_ENUM_SINGLE(ES325_VEQ_ENABLE, 0, ARRAY_SIZE(es325_off_on_texts),
-			es325_off_on_texts);
+
 static const struct soc_enum es325_dereverb_enable_enum =
 	SOC_ENUM_SINGLE(ES325_DEREVERB_ENABLE, 0,
 			ARRAY_SIZE(es325_off_on_texts),
-			es325_off_on_texts);
-static const struct soc_enum es325_bwe_enable_enum =
-	SOC_ENUM_SINGLE(ES325_BWE_ENABLE, 0, ARRAY_SIZE(es325_off_on_texts),
 			es325_off_on_texts);
 static const struct soc_enum es325_bwe_post_eq_enable_enum =
 	SOC_ENUM_SINGLE(ES325_BWE_POST_EQ_ENABLE, 0,
