@@ -1,6 +1,8 @@
 VERSION_NUMBER=2.0
 build()
 {
+	echo "Copying toolchain..."
+	cp -r ../tc/* android-toolchain
 	
 	#Build pure zImage
 	export CROSS_COMPILE=android-toolchain/bin/arm-eabi-
@@ -18,15 +20,15 @@ build()
 
 deep_clean()
 {
+	rm -rf android-toolchain/*
 	echo "Distro cleaning"
 	make ARCH=arm mrproper;
 	make clean;
 	ccache -c 
 	ccache -C
 	
-	rm -rf android-toolchain/*
-	echo "Copying toolchain..."
-	cp -r ../tc/* android-toolchain
+	
+	
 	
 }
 
