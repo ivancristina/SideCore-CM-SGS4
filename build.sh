@@ -5,10 +5,8 @@ build()
 {
 	
 	#Build pure zImage
-	export CROSS_COMPILE=$TOOLCHAIN_DIR
-	export ARCH=arm
-	make side_jf_defconfig
-	make -j4
+	. arch/arm/config/side_jf_defconfig
+	make ARCH=arm CROSS_COMPILE=android-toolchain/bin/arm-eabi- CC='android-toolchain/bin/arm-eabi-gcc --sysroot=android-toolchain/arm-Samsung-linux-gnueabihf/sysroot/' zImage -j5
 	
 	PRODUCTIMAGE="arch/arm/boot/Image"
 	if [ ! -f "$PRODUCTIMAGE" ]; then
