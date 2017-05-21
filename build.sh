@@ -1,11 +1,9 @@
-VERSION_NUMBER=$(<build/version)
-TOOLCHAIN_DIR=android_toolchain/bin/arm-eabi-
-
+VERSION_NUMBER=2.0
 build()
 {
 	
 	#Build pure zImage
-	. arch/arm/config/side_jf_defconfig
+	. arch/arm/configs/side_jf_defconfig
 	make ARCH=arm CROSS_COMPILE=android-toolchain/bin/arm-eabi- CC='android-toolchain/bin/arm-eabi-gcc --sysroot=android-toolchain/arm-Samsung-linux-gnueabihf/sysroot/' zImage -j5
 	
 	PRODUCTIMAGE="arch/arm/boot/Image"
@@ -20,10 +18,13 @@ deep_clean()
 {
 	echo "Distro cleaning"
 	make clean
-	make clobber
 	make ARCH=arm distclean
 	ccache -c 
 	ccache -C
+	
+	rm -rf android-toolchain/*
+	echo "Copying toolchain..."
+	cp -r ../tc/* android-toolchain
 	
 }
 
