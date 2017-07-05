@@ -499,16 +499,20 @@ struct scatterlist *mmc_blk_get_sg(struct mmc_card *card,
 			sec_cnt = total_sec_cnt;
 		else
 			sec_cnt = max_seg_size;
-			sg_set_page(sg, virt_to_page(buf), sec_cnt, offset_in_page(buf));
-			buf = buf + sec_cnt;
-			total_sec_cnt = total_sec_cnt - sec_cnt;
-			if (total_sec_cnt == 0)
+
+		sg_set_page(sg, virt_to_page(buf), sec_cnt, offset_in_page(buf));
+		buf = buf + sec_cnt;
+		total_sec_cnt = total_sec_cnt - sec_cnt;
+
+		if (total_sec_cnt == 0)
 				break;
-			sg = sg_next(sg);
+		
+		sg = sg_next(sg);
 	}
 
 	if (sg)
 		sg_mark_end(sg);
+
 	*sg_len = len;
 	return sl;
 }
