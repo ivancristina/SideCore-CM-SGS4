@@ -126,7 +126,7 @@ static ssize_t ac_charge_level_store(struct kobject *kobj,
 		switch (new_ac_charge_level) {
 			case AC_CHARGE_1000:
 			case AC_CHARGE_1300:
-			case AC_CHARGE_1900:
+			case AC_CHARGE_1600:
 				ac_charge_level = new_ac_charge_level;
 				return count;
 			default:
@@ -177,7 +177,6 @@ static ssize_t usb_charge_level_store(struct kobject *kobj,
 			case USB_CHARGE_460:
 			case USB_CHARGE_700:
 			case USB_CHARGE_900:
-			case USB_CHARGE_1600:
 				usb_charge_level = new_usb_charge_level;
 				return count;
 			default:
@@ -216,8 +215,8 @@ static ssize_t failsafe_store(struct kobject *kobj,
 
 	switch (new_failsafe) {
 		case FAIL_SAFE_ENABLED:
-			usb_charge_level = USB_CHARGE_1600;
-			ac_charge_level = AC_CHARGE_1900;
+			usb_charge_level = USB_CHARGE_460;
+			ac_charge_level = AC_CHARGE_1000;
 			failsafe = new_failsafe;
 			return count;
 		case FAIL_SAFE_DISABLED:
@@ -265,8 +264,8 @@ static ssize_t info_show(struct kobject *kobj,
 		"Valid AC  levels : %s\n"
 		"Valid USB levels : %s\n",
 		 FAST_CHARGE_VERSION,
-		 force_fast_charge == FAST_CHARGE_DISABLED 	   ? "0 - Disabled" :
-		(force_fast_charge == FAST_CHARGE_FORCE_AC         ? "1 - Use stock AC level on USB (default)" :
+		 force_fast_charge == FAST_CHARGE_DISABLED 	   ? "0 - Disabled (default)" :
+		(force_fast_charge == FAST_CHARGE_FORCE_AC         ? "1 - Use stock AC level on USB" :
 		(force_fast_charge == FAST_CHARGE_FORCE_CUSTOM_MA  ? "2 - Use custom mA on AC and USB" : "Problem : value out of range")),
 		 ac_charge_level,
 		 usb_charge_level,
@@ -313,12 +312,12 @@ int force_fast_charge_init(void)
 {
 	int force_fast_charge_retval;
 
-	/* Forced fast charge enabled by default */
-	force_fast_charge = FAST_CHARGE_FORCE_AC;
-	/* Default AC charge level to 1900mA/h    */
-	ac_charge_level   = AC_CHARGE_1900;
-	/* Default USB charge level to 1600mA/h    */
-	usb_charge_level  = USB_CHARGE_1600;
+	/* Forced fast charge disabled by default */
+	force_fast_charge = FAST_CHARGE_DISABLED;
+	/* Default AC charge level to 1000mA/h    */
+	ac_charge_level   = AC_CHARGE_1000;
+	/* Default USB charge level to 460mA/h    */
+	usb_charge_level  = USB_CHARGE_460;
 	/* Allow only values in list by default   */
 	failsafe          = FAIL_SAFE_ENABLED;
 
@@ -349,5 +348,5 @@ module_exit(force_fast_charge_exit);
 MODULE_LICENSE("GPL v2");
 MODULE_AUTHOR("Jean-Pierre Rasquin <yank555.lu@gmail.com>");
 MODULE_AUTHOR("Paul Reioux <reioux@gmail.com>");
-MODULE_DESCRIPTION("Fast Charge Hack for Android modded by zagi988");
+MODULE_DESCRIPTION("Fast Charge Hack for Android");
 
