@@ -3606,17 +3606,20 @@ static void btc_override_worker(struct work_struct *work)
 	temp = pm_chg_get_rt_status(chip, BATTTEMP_HOT_IRQ);
 	if (temp) {
 		if (decidegc < chip->btc_override_hot_decidegc -
-				chip->hysteresis_temp_dc)
-			/* stop forcing batt hot */
+				chip->hysteresis_temp_dc) {
+			
 			rc = pm_chg_override_hot(chip, 0);
+
 			if (rc)
 				pr_err("Couldnt write 0 to hot comp\n");
+		}
 	} else {
 		if (decidegc >= chip->btc_override_hot_decidegc)
 			/* start forcing batt hot */
 			rc = pm_chg_override_hot(chip, 1);
-			if (rc && chip->btc_panic_if_cant_stop_chg)
-				panic("Couldnt override comps to stop chg\n");
+
+		if (rc && chip->btc_panic_if_cant_stop_chg)
+			panic("Couldnt override comps to stop chg\n");
 	}
 
 	temp = pm_chg_get_rt_status(chip, BATTTEMP_COLD_IRQ);

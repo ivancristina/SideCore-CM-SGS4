@@ -8707,16 +8707,17 @@ dhd_bus_devreset(dhd_pub_t *dhdp, uint8 flag)
 					}
 				} else
 					bcmerror = BCME_SDIO_ERROR;
-			} else
+			} else 
 				bcmerror = BCME_SDIO_ERROR;
 
-				dhd_os_sdunlock(dhdp);
+			dhd_os_sdunlock(dhdp);
 		} else {
 			bcmerror = BCME_SDIO_ERROR;
 			DHD_INFO(("%s called when dongle is not in reset\n",
 				__FUNCTION__));
 			DHD_INFO(("Will call dhd_bus_start instead\n"));
 			dhd_bus_resume(dhdp, 1);
+
 			if ((bcmerror = dhd_bus_start(dhdp)) != 0)
 				DHD_ERROR(("%s: dhd_bus_start fail with %d\n",
 					__FUNCTION__, bcmerror));

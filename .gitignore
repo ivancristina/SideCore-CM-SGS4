@@ -9,7 +9,6 @@
 #
 # Normal rules
 #
-.*
 *.o
 *.o.*
 *.a
@@ -24,7 +23,6 @@
 *.order
 modules.builtin
 *.elf
-*.bin
 *.gz
 *.bz2
 *.lzma
