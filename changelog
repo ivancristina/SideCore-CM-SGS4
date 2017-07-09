@@ -4,7 +4,19 @@ Fully rebased source code
 Faux sound edits 
 Stability on some commits
 Also flash kernel adiutor
-
+Built with Linaro TC specially made for S4-jf
+Support GCC6
+Big upstream merge
+Disable OC/UC
+Default governor
+io sched to 1024
+Reduced swappiness to 40
+enable early_suspend and dynamic fsync,by default
+Fix fast charge
+Reduce sleep time timeout 
+Optimize KSM to gain battery life
+TC Flags ( O3 and more)
+Safetynet stuff 
 
 Initial release
 --------------------
