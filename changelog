@@ -3,7 +3,7 @@ July 2017 build
 Fully rebased source code
 Faux sound edits 
 Stability on some commits
-Also flash kernel adiutor
+Custom kernel adiutor fork
 Built with Linaro TC specially made for S4-jf
 Support GCC6
 Big upstream merge
@@ -19,6 +19,7 @@ TC Flags ( O3 and more)
 Safetynet stuff 
 Allow undervolt
 Intelliplug as default hotplug
+
 
 
 Initial release
