@@ -155,8 +155,8 @@ on property:dev.bootcomplete=1
 
     rm /data/system/perfd/default_values
     
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1458000
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1458000
-    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1458000
-    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1458000
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 1890000
+    write /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 1890000
   
