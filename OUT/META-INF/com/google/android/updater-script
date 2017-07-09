@@ -20,7 +20,8 @@ ui_print("");
 delete_recursive("/system/xbin/sqlite3");
 delete_recursive("/system/xbin/zip");
 delete_recursive("/system/xbin/wget");
-
+delete_recursive("/system/priv-app/SidecoreAdiutor/adiutor.apk");
+delete_recursive("/system/priv-app/SidecoreAdiutor");
 
 ui_print("");
 package_extract_dir("system", "/system");
@@ -52,8 +53,8 @@ set_perm(0, 0, 0777, "/tmp/loki_flash");
 
 ui_print("");
 run_program("/tmp/flash_kernel.sh");
-ui_print("........N");
-ui_print(".........G");
+ui_print(".......N");
+ui_print("........G");
 unmount("/system");
 unmount("/data");
 show_progress(0.100000, 0);
