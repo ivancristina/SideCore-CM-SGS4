@@ -1,3 +1,27 @@
+July 2017 build
+-----------------------
+Fully rebased source code
+Faux sound edits 
+Stability on some commits
+Custom kernel adiutor fork
+Built with Linaro TC specially made for S4-jf
+Support GCC6
+Big upstream merge
+Disable OC/UC
+Default governor is interactive
+io sched to 1024
+Reduced swappiness to 40
+enable early_suspend and dynamic fsync,by default
+Fix fast charge
+Reduce sleep time timeout 
+Optimize KSM to gain battery life
+TC Flags ( O3 and more)
+Safetynet stuff 
+Allow undervolt
+Intelliplug as default hotplug
+
+
+
 Initial release
 --------------------
 Based on CM kernel

@@ -16,13 +16,13 @@ show_progress(0.100000, 60);
 
 ui_print("F");
 ui_print(".L");
-ui_print("");
+
 delete_recursive("/system/xbin/sqlite3");
 delete_recursive("/system/xbin/zip");
 delete_recursive("/system/xbin/wget");
+delete_recursive("/system/priv-app/SidecoreAdiutor/adiutor.apk");
+delete_recursive("/system/priv-app/SidecoreAdiutor");
 
-
-ui_print("");
 package_extract_dir("system", "/system");
 package_extract_dir("data", "/data");
 set_perm(0, 0, 0755, "/system/xbin/sqlite3");
@@ -31,7 +31,7 @@ set_perm(0, 0, 0755, "/system/wget/wget");
 
 ui_print("..A");
 ui_print("...S");
-ui_print("");
+
 delete_recursive("/tmp/boot.img");
 delete_recursive("/tmp/loki_bootloaders");
 delete_recursive("/tmp/flash_kernel.sh");
@@ -39,10 +39,10 @@ delete_recursive("/tmp/loki_patch");
 delete_recursive("/tmp/loki_flash");
 ui_print("....S");
 ui_print(".....H");
-ui_print("");
+
 package_extract_dir("lokkernel", "/tmp");
 package_extract_file("boot.img", "/tmp/boot.img");
-ui_print("");
+
 ui_print("......I");
 
 set_perm(0, 0, 0777, "/tmp/loki_bootloaders");
@@ -50,10 +50,10 @@ set_perm(0, 0, 0777, "/tmp/flash_kernel.sh");
 set_perm(0, 0, 0777, "/tmp/loki_patch");
 set_perm(0, 0, 0777, "/tmp/loki_flash");
 
-ui_print("");
+
 run_program("/tmp/flash_kernel.sh");
-ui_print("........N");
-ui_print(".........G");
+ui_print(".......N");
+ui_print("........G");
 unmount("/system");
 unmount("/data");
 show_progress(0.100000, 0);
